@@ -1,0 +1,17 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "exec": "ts-node ./src/index.ts",
+  "env": {
+    "CSRF_COOKIE_NAME": "ax-csrf-cookie",
+    "COOKIE_SECRET": "youReallyNeedToChangeThis",
+    "CSRF_COOKIE_SECRET": "youReallyNeedToChangeThis",
+    "DANGEROUSLY_DISABLE_SECURE_CSRF_COOKIES": "true",
+    "ORY_SDK_URL": "http://localhost:4433",
+    "HYDRA_ADMIN_URL": "http://127.0.0.1:4445",
+    "KRATOS_PUBLIC_URL": "http://127.0.0.1:4433",
+    "KRATOS_ADMIN_URL": "http://127.0.0.1:4434",
+    "SECURITY_MODE": "standalone",
+    "KRATOS_BROWSER_URL": "http://127.0.0.1:4433"
+  }
+}
