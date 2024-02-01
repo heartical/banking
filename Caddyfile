@@ -1,22 +1,21 @@
 accaunt.localhost {
 	tls internal 
 	handle_path /auth/* {
-		handle {
-			handle /verification/* {
-				reverse_proxy 127.0.0.1:3000/verification	
-			}
-			handle /recovery/* {
-				reverse_proxy 127.0.0.1:3000/recovery	
-			}
-			handle /logout/* {
-				reverse_proxy 127.0.0.1:3000/logout	
-			}
-			handle /login/* {
-				reverse_proxy 127.0.0.1:3000/login/
-			}
-			handle /registration/* {
-				reverse_proxy 127.0.0.1:3000/registration	
-			}
+		root * /auth
+		handle /verification/* {
+			reverse_proxy 127.0.0.1:3000/verification	
+		}
+		handle /recovery/* {
+			reverse_proxy 127.0.0.1:3000/recovery	
+		}
+		handle /logout/* {
+			reverse_proxy 127.0.0.1:3000/logout	
+		}
+		handle /login/* {
+			reverse_proxy 127.0.0.1:3000/login
+		}
+		handle /registration/* {
+			reverse_proxy 127.0.0.1:3000/registration	
 		}
 	}
 	handle {
